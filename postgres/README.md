@@ -12,6 +12,8 @@ sudo docker logs -f ctpgsql
 
 sudo docker rm --force ctpgsql
 
+sudo docker rmi $(docker images -f "dangling=true" -q)
+
 --[psql]-------------------------------------------------------------------------------------------
 
 psql -h localhost -U usuario -d banco
