@@ -17,12 +17,19 @@ sudo docker rm --force ctpgsql
 psql -h localhost -U usuario -d banco
 
 \l .. lista os bancos de dados
+
 \d .. lista as tabelas do banco de dados
+
 \dv .. lista as views do banco de dados
+
 \di .. lista os índices do banco de dados
+
 \db .. lista as tablespaces
+
 \dg .. lista as roles existentes (usuários ou grupos)
+
 \conninfo .. apresenta informações sobre a conexão atual
+
 \h <comando> .. apresenta detalhes sobre o comando
 
 \q .. sair
