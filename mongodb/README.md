@@ -13,3 +13,17 @@ sudo docker rm --force ctmongodb
 
 sudo docker rmi $(docker images -f "dangling=true" -q)
 ```
+
+--[MONGOSH]-----------------------------------------------------------------------------------------
+
+```sh
+mongosh -u usuario -p Teste1@34 --authenticationDatabase admin
+
+show dbs;
+
+use banco;
+
+show collections;
+
+db.colecao.find();
+```
