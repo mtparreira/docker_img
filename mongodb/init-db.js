@@ -1,11 +1,18 @@
-db = db.getSiblingDB("banco"); // Cria ou acessa a base de dados
+// Cria ou acessa a base de dados
+db = db.getSiblingDB("admin");
 
-// Cria um usuário para a base de dados
+// Cria usuário master
 db.createUser({
-  user: "usuario",
-  pwd: "Teste1@34",
-  roles: [{ role: "readWrite", db: "banco" }],
+  user: "master",
+  pwd: "Teste1234",
+  roles: [
+    { role: "userAdminAnyDatabase", db: "admin" },
+    { role: "readWriteAnyDatabase", db: "admin" },
+  ],
 });
+
+// Cria ou acessa a base de dados
+db = db.getSiblingDB("banco");
 
 // Cria uma coleção de exemplo
 db.createCollection("colecao");

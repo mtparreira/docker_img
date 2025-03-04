@@ -1,17 +1,19 @@
 --[DOCKER]-----------------------------------------------------------------------------------------
 
 ```sh
-sudo docker build -t imgpgsql .
+docker build -t imgpgsql .
 
-sudo docker run -d --name ctpgsql -p 5432:5432 --rm imgpgsql
+docker run -d --name ctpgsql -p 5432:5432 --rm imgpgsql
 
-sudo docker exec -it ctpgsql bash
+docker exec -it ctpgsql bash
 
-sudo docker logs -f ctpgsql
+docker logs -f ctpgsql
 
-sudo docker rm --force ctpgsql
+docker rm --force ctpgsql
 
-sudo docker rmi $(docker images -f "dangling=true" -q)
+docker volume prune -f
+
+docker rmi $(docker images -f "dangling=true" -q)
 ```
 
 --[psql]-------------------------------------------------------------------------------------------
