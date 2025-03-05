@@ -3,7 +3,7 @@
 ```sh
 docker build -t imgmongodb .
 
-docker run -d --name ctmogodb --network host -p 27017:27017 --rm imgmongodb
+docker run -d --name ctmogodb -p 27017:27017 --rm imgmongodb
 
 docker exec -it ctmongodb bash
 
