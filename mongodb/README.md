@@ -16,7 +16,7 @@ docker volume prune -f
 docker rmi $(docker images -f "dangling=true" -q)
 ```
 
---[MONGOSH]-----------------------------------------------------------------------------------------
+--[MONGOSH]----------------------------------------------------------------------------------------
 
 ```sh
 mongosh -u usuario -p Teste1@34 --authenticationDatabase admin
@@ -28,4 +28,12 @@ use banco;
 show collections;
 
 db.colecao.find();
+
+db.colecao.find().count();
+
+db.colecao.find( { nome: "Exemplo" })
+
+db.colecao.find( { nome: { $regex: /em/ } } )
+
+db.colecao.drop( { writeConcern: { w: 1 } } )
 ```
