@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-pgsql
+  labels:
+    app: pod-pgsql
+spec:
+  containers:
+    - name: pod-pgsql-container
+      image: imgpgsql
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 5432

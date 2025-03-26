@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-mongo
+  labels:
+    app: pod-mongo
+spec:
+  containers:
+    - name: pod-mongo-container
+      image: imgmongo
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 27017
